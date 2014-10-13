@@ -52,7 +52,8 @@ function local_metasync_parent_courses($courseid = null) {
 function local_metasync_child_courses($courseid) {
     global $DB;
 
-    return $DB->get_records_menu('enrol', array('enrol' => 'meta', 'courseid' => $courseid, 'status' => ENROL_INSTANCE_ENABLED), 'sortorder', 'id, customint1');
+    return $DB->get_records_menu('enrol',
+        array('enrol' => 'meta', 'courseid' => $courseid, 'status' => ENROL_INSTANCE_ENABLED), 'sortorder', 'id, customint1');
 }
 
 /**
